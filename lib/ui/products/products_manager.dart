@@ -7,7 +7,7 @@ class ProductsManager{
       id: 'p1',
       title: 'Hoa Thỏ Bunny',
       description: 'Thỏ bunny gồm 11 bông hoa 7 lớp hoặc hoa nhũ. Hoa hồng sáp có mùi thơm nhẹ. Form 2 tầng cứng cáp, đứng thẳng. 100% tai thỏ dựng đứng được. Full lông 2 tầng.',
-      price: 350.000,
+      price: 350,
       imageUrl:
         'https://scontent.fvca1-3.fna.fbcdn.net/v/t39.30808-6/334602282_1342779339788761_4832881737478778824_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=I2h5YwlS85MAX_Vk9C6&_nc_ht=scontent.fvca1-3.fna&oh=00_AfCuOY-gVjG6M2TJgTiDK_vUFjzpvxXHAxlk5yrOA_wazg&oe=64331A5F',
       isFavorite: true,
