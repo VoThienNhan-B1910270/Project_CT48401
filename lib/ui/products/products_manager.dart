@@ -14,27 +14,27 @@ class ProductsManager{
     ),
     Product(
       id: 'p2',
-      title: 'Hoa vai nho',
-      description: 'A nice pair of trousers.',
-      price: 59.99,
+      title: 'Hoa Vải Nhỏ',
+      description: 'Hoa vải nhỏ gồm 3 bông hoa vải và đi kèm với hoa là một ít đệm từ nhánh lá táo.',
+      price: 200,
       imageUrl:
           'https://scontent.fvca1-2.fna.fbcdn.net/v/t1.15752-9/333620039_191029126960448_2046996536971346353_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_ohc=x2JX0Ju9MAsAX_j8KJf&_nc_ht=scontent.fvca1-2.fna&oh=03_AdT4lZynTzXUiggjvk0gfYV8EkpbQqeIHzGlpN3P4A63Pw&oe=64551A96',
     ),
     Product(
       id: 'p3',
-      title: 'Yellow Scarf',
-      description: 'Warm and cozy - exactly what you need for the winter.',
-      price: 19.99,
+      title: 'Hoa Gấu',
+      description: 'Hoa gấu gồm 10 chú gấu xinh xắn. Xen kẻ những chú gấu là những vãi tuyết được cuộn một cách đẹp mắt. Đây là món quà tuyệt vời khi được tặng vào các dịp đặc biệt.',
+      price: 350,
       imageUrl:
-          'https://live.staticflickr.com/4043/4438260868_cc79b3369d_z.jpg',
+          'https://scontent.fvca1-1.fna.fbcdn.net/v/t39.30808-6/334463238_137539369231395_1902763790119435642_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=--tQUUfh3J4AX_LxakL&_nc_ht=scontent.fvca1-1.fna&oh=00_AfAXkUx3dGRMEieErsL5MZLF0-G-toQvzQ0qT2wqLX4I-Q&oe=64322172',
     ),
     Product(
       id: 'p4',
-      title: 'A Pan',
+      title: 'Bi Nhỏ',
       description: 'Prepare any meal you want.',
-      price: 49.99,
+      price: 200,
       imageUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cast-Iron-Pan.jpg/1024px-Cast-Iron-Pan.jpg',
+          'https://scontent.fvca1-4.fna.fbcdn.net/v/t39.30808-6/334567776_597753175166209_2667319389644973654_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=vDKtAHGmGPkAX8HrI5j&_nc_ht=scontent.fvca1-4.fna&oh=00_AfBbUjvaKuBaPCKRVdSKJsY5dA_ET4ityM-LyYu7HqFgbA&oe=6433FC7F',
       isFavorite: true,
     ),
   ];
