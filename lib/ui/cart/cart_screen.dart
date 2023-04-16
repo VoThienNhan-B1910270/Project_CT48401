@@ -1,6 +1,9 @@
 //Định nghĩa trang hiển thị thông tin một giỏ hàng
-import 'package:provider/provider.dart';
+
+import 'package:b1910270_ct48401_project/ui/orders/order_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'cart_item_card.dart';
 import 'cart_manager.dart';
 
@@ -62,7 +65,11 @@ class CartScreen extends StatelessWidget{
             ),
             TextButton(
               onPressed: (){
-                print('An order has been added');
+                context.read<OrderManager>().addOrder(
+                  cart.products,
+                  cart.totalAmount,
+                );
+                cart.clear();
               },
               style: TextButton.styleFrom(
                 textStyle: TextStyle(color: Theme.of(context).primaryColor),
