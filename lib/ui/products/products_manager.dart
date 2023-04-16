@@ -82,9 +82,13 @@ class ProductsManager with ChangeNotifier{
     }
   }
 
-  void toggleFavoriteStatus(Product product){
+  Future<void> toggleFavoriteStatus(Product product) async {
     final saveStatus = product.isFavorite;
     product.isFavorite = !saveStatus;
+
+    if(await _productsSevice.saveFavoriteStatus(product)){
+      product.isFavorite = saveStatus;
+    }
   }
 
   Future<void> deleteProduct(String id) async {
