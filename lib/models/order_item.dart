@@ -3,7 +3,7 @@ import 'cart_item.dart';
 
 class OrderItem{
   final String? id;
-  final double amount;
+  final num amount;
   final List<CartItem> products;
   final DateTime dateTime;
 
@@ -20,7 +20,7 @@ class OrderItem{
 
   OrderItem copyWith({
     String? id,
-    double? amount,
+    num? amount,
     List<CartItem>? products,
     DateTime? dateTime,
   })  {

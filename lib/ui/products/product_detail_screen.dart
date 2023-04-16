@@ -32,7 +32,7 @@ class ProductDetailScreen extends StatelessWidget{
             ),
             const SizedBox(height: 10,),
             Text(
-              '${product.price}.000.Vnđ',
+              '${product.price}.000đ',
               style: const TextStyle(
                 color: Colors.black,
                 fontSize: 25,
