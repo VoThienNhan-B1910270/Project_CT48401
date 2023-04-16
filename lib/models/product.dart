@@ -1,5 +1,6 @@
 //Trang chi tiết sản phẩm
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
 class Product{
   final String? id;
