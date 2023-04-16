@@ -6,7 +6,7 @@ class Product{
   final String? id;
   final String title;
   final String description;
-  final num price;
+  final double price;
   final String imageUrl;
   final ValueNotifier<bool> _isFavorite;
 
@@ -35,7 +35,7 @@ class Product{
     String? id,
     String? title,
     String? description,
-    num? price,
+    double? price,
     String? imageUrl,
     bool? isFavorite,
   })  {
