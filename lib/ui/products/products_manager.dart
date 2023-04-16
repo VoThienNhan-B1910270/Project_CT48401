@@ -72,11 +72,13 @@ class ProductsManager with ChangeNotifier{
     }
   }
 
-  void updateProduct(Product product){
+  Future<void> updateProduct(Product product) async {
     final index = _items.indexWhere((item) => item.id == product.id);
     if(index >= 0){
-      _items[index] = product;
-      notifyListeners();
+      if(await _productsSevice.updateProduct(product)){
+        _items[index] = product;
+        notifyListeners();
+      }
     }
   }
 
@@ -85,10 +87,16 @@ class ProductsManager with ChangeNotifier{
     product.isFavorite = !saveStatus;
   }
 
-  void deleteProduct(String id){
+  Future<void> deleteProduct(String id) async {
     final index = _items.indexWhere((item) => item.id == id);
+    Product? existingProduct = _items[index];
     _items.removeAt(index);
     notifyListeners();
+
+    if(!await _productsSevice.deleteProduct(id)){
+      _items.insert(index, existingProduct);
+      notifyListeners();
+    }
   }
 
   final ProductsService _productsSevice;
