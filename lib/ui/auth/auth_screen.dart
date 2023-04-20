@@ -16,16 +16,17 @@ class AuthScreen extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  const Color.fromRGBO(215, 117, 255, 1).withOpacity(0.5),
-                  const Color.fromRGBO(255, 188, 117, 1).withOpacity(0.9),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                stops: const [0, 1],
+            padding: const EdgeInsets.all(16),
+            constraints: const BoxConstraints.expand(
+              width: 400,
+              height: 800,
+            ),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/image/sp1.jpg'),
+                fit: BoxFit.cover,
               ),
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
             ),
           ),
           SingleChildScrollView(

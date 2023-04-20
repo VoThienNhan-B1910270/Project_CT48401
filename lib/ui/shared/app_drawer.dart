@@ -15,37 +15,58 @@ class AppDrawer extends StatelessWidget{
       child: Column(
         children: <Widget>[
           AppBar(
+            leading: const Icon(Icons.person, size: 40),
             title: const Text('Hello Friend!'),
             automaticallyImplyLeading: false,
           ),
-          const Divider(),
+          const Divider(
+            height: 10,
+            indent: 10,
+            endIndent: 10,
+            color: Colors.black,
+          ),
           ListTile(
             leading: const Icon(Icons.shop),
-            title: const Text('Shop'),
+            title: const Text('Shop', style: TextStyle( fontSize: 20),),
             onTap: (){
               Navigator.of(context).pushReplacementNamed('/');
             },
           ),
-          const Divider(),
+          const Divider(
+            height: 10,
+            indent: 10,
+            endIndent: 10,
+            color: Colors.black,
+          ),
           ListTile(
             leading: const Icon(Icons.payment),
-            title: const Text('Giỏ Hàng'),
+            title: const Text('Giỏ Hàng', style: TextStyle( fontSize: 20),),
             onTap: (){
               Navigator.of(context).pushReplacementNamed(OrdersScreen.routeName);
             },
           ),
-          const Divider(),
+          const Divider(
+            height: 10,
+            indent: 10,
+            endIndent: 10,
+            color: Colors.black,
+          ),
           ListTile(
             leading: const Icon(Icons.edit),
-            title: const Text('Quản Lí Sản Phẩm'),
+            title: const Text('Quản Lí Sản Phẩm', style: TextStyle( fontSize: 20),),
             onTap: (){
               Navigator.of(context).pushReplacementNamed(UserProductsScreen.routeName);
             },
           ),
-          const Divider(),
+          const Divider(
+            height: 10,
+            indent: 10,
+            endIndent: 10,
+            color: Colors.black,
+          ),
           ListTile(
             leading: const Icon(Icons.exit_to_app),
-            title: const Text("Logout"),
+            title: const Text("Đăng Xuất", style: TextStyle( fontSize: 20)),
             onTap: (){
               Navigator.of(context)
                 ..pop()

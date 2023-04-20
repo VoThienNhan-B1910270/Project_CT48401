@@ -24,19 +24,24 @@ class UserProductsScreen extends StatelessWidget{
         ],
       ),
       drawer: const AppDrawer(),
-      body: FutureBuilder(
-        future:  _refreshProducts(context),
-        builder: (ctx, snapshot){
-          if(snapshot.connectionState == ConnectionState.waiting){
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-          return RefreshIndicator(
-            onRefresh: () => _refreshProducts(context),
-            child: buildUserProductListView(),
-          );
-        },
+      body: 
+      // FutureBuilder(
+      //   future:  _refreshProducts(context),
+      //   builder: (ctx, snapshot){
+      //     if(snapshot.connectionState == ConnectionState.waiting){
+      //       return const Center(
+      //         child: CircularProgressIndicator(),
+      //       );
+      //     }
+      //     return RefreshIndicator(
+      //       onRefresh: () => _refreshProducts(context),
+      //       child: buildUserProductListView(),
+      //     );
+      //   },
+      // )
+      RefreshIndicator(
+        onRefresh: () async => print('Refresh products'),
+        child: buildUserProductListView(),
       )
     );
   }

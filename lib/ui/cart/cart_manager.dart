@@ -5,12 +5,12 @@ import 'package:flutter/foundation.dart';
 
 class CartManager with ChangeNotifier{
   Map<String, CartItem> _items = {
-    'p1': CartItem(
-      id: 'c1',
-      title: 'Hoa Bi Nhỏ',
-      price: 200,
-      quantity: 2,
-    ),
+    // 'p1': CartItem(
+    //   id: 'c1',
+    //   title: 'Hoa Bi Nhỏ',
+    //   price: 200,
+    //   quantity: 2,
+    // ),
   };
 
   int get productCount{

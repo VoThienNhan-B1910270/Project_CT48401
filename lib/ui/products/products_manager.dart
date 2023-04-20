@@ -8,6 +8,8 @@ import '../../models/product.dart';
 
 class ProductsManager with ChangeNotifier{
     List<Product> _items = [];
+
+    final ProductsService _productsSevice;
     // Product(
     //   id: 'p1',
     //   title: 'Hoa Thỏ Bunny',
@@ -83,11 +85,11 @@ class ProductsManager with ChangeNotifier{
   }
 
   Future<void> toggleFavoriteStatus(Product product) async {
-    final saveStatus = product.isFavorite;
-    product.isFavorite = !saveStatus;
+    final savedStatus = product.isFavorite;
+    product.isFavorite = !savedStatus;
 
-    if(await _productsSevice.saveFavoriteStatus(product)){
-      product.isFavorite = saveStatus;
+    if(!await _productsSevice.saveFavoriteStatus(product)){
+      product.isFavorite = savedStatus;
     }
   }
 
@@ -102,8 +104,6 @@ class ProductsManager with ChangeNotifier{
       notifyListeners();
     }
   }
-
-  final ProductsService _productsSevice;
 
   ProductsManager([AuthToken? authToken])
     : _productsSevice = ProductsService(authToken);

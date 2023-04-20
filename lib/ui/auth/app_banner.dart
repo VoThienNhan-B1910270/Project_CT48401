@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class AppBanner extends StatelessWidget {
@@ -12,29 +13,38 @@ class AppBanner extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 20.0),
       padding: const EdgeInsets.symmetric(
-        vertical: 8.0,
-        horizontal: 94.0,
+        vertical: 1.0,
+        horizontal: 10.0,
       ),
-      transform: Matrix4.rotationZ(-8 * pi / 180)..translate(-10.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: Colors.deepOrange.shade900,
-        boxShadow: const [
-          BoxShadow(
-            blurRadius: 8,
-            color: Colors.black26,
-            offset: Offset(0, 2),
+      child:  Stack(
+        children: const <Widget>[
+          Positioned(
+            left: 10,
+            top: 0,
+            child: Text(
+              'Shop Hoa',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 22,
+                fontFamily: 'Anton',
+                fontWeight: FontWeight.normal,
+                ),
+              ),
+            ),
+          Positioned(
+            left: 10,
+            top: 31,
+            child: Text(
+              'Thùy Dương Flower',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 30,
+                fontFamily: 'Anton',
+                fontWeight: FontWeight.normal,
+              ),
+            ),
           )
         ],
-      ),
-      child: Text(
-        'MyShop',
-        style: TextStyle(
-          color: Theme.of(context).textTheme.titleLarge?.color,
-          fontSize: 50,
-          fontFamily: 'Anton',
-          fontWeight: FontWeight.normal,
-        ),
       ),
     );
   }

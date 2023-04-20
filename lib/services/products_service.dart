@@ -79,8 +79,10 @@ class ProductsService extends FirebaseService {
     try {
       final url =
           Uri.parse('$databaseUrl/products/${product.id}.json?auth=$token');
-      final response =
-          await http.patch(url, body: json.encode(product.toJson()));
+      final response = await http.patch(
+        url,
+        body: json.encode(product.toJson()),
+      );
       if (response.statusCode != 200) {
         throw Exception(json.decode(response.body)['error']);
       }

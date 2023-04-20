@@ -31,9 +31,10 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen>{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Thùy Dương Flower'),
+        title: const Text('Thùy Dương Flower', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
         actions: <Widget>[
           buildProductFilterMenu(),
+          buildUser(),
           buildShoppingCartIcon(),
         ],
       ),
@@ -42,7 +43,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen>{
         future: _fetchProducts,
         builder: (context, snapshot){
           if(snapshot.connectionState == ConnectionState.done){
-            return ValueListenableBuilder(
+            return ValueListenableBuilder<bool>(
               valueListenable: _showOnlyFavorites,
               builder: (context, onlyFavorites, child){
                 return ProductsGrid(onlyFavorites);
@@ -54,6 +55,14 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen>{
           );
         },
       ),
+    );
+  }
+
+  Widget buildUser(){
+    return IconButton(
+      icon: const Icon(Icons.person_outline_outlined),
+      onPressed: (){
+      },
     );
   }
 

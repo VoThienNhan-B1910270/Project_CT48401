@@ -5,7 +5,7 @@ Future<bool?> showConfirmDialog(BuildContext context, String message){
   return showDialog(
     context: context,
     builder: (ctx) => AlertDialog(
-      title: const Text('Are you sure?'),
+      title: const Text('Bạn muốn xóa chứ?'),
       content: Text(message),
       actions: <Widget>[
         TextButton(

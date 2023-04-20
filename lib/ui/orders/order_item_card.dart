@@ -24,11 +24,16 @@ class _OrderItemCardState extends State<OrderItemCard>{
       child: Column(
         children: <Widget>[
           buildOrderSummary(),
-          if(_expanded) buildOrderDetails()
+          if(_expanded) buildOrderDetails(),
+          // if(_expanded) buildRemove()
         ],
       ),
     );
   }
+
+  // Widget buildRemove(){
+  //   return const Icon(Icons.delete);
+  // }
 
   Widget buildOrderDetails(){
     return Container(
@@ -48,7 +53,7 @@ class _OrderItemCardState extends State<OrderItemCard>{
                   ),
                 ),
                 Text(
-                  '${prod.quantity}x ${prod.price}.000đ',
+                  '${prod.quantity}x ${prod.price.toStringAsFixed(0)}.000đ',
                   style: const TextStyle(
                     fontSize: 18,
                     color: Colors.grey,
@@ -64,7 +69,7 @@ class _OrderItemCardState extends State<OrderItemCard>{
 
   Widget buildOrderSummary(){
     return ListTile(
-      title: Text('${widget.order.amount}.000đ'),
+      title: Text('${widget.order.amount.toStringAsFixed(0)}.000đ'),
       subtitle: Text(
         DateFormat('dd/MM/yyyy hh:mm').format(widget.order.dateTime),
       ),

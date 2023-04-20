@@ -16,6 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(
+          create: (context) => AuthManager(),
+        ),
         ChangeNotifierProxyProvider<AuthManager, ProductsManager>(
           create: (ctx) => ProductsManager(),
           update: (ctx, authManager, productsManager){
@@ -25,10 +28,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(create: (ctx) => CartManager()),
         ChangeNotifierProvider(create: (ctx) => OrderManager()),
-        ChangeNotifierProvider(create: (context) => AuthManager()),
       ],
       child: Consumer<AuthManager>(
-        builder: (ctx, authManager, child){
+        builder: (context, authManager, child){
           return MaterialApp(
             title: 'Thùy Dương Flower',
             debugShowCheckedModeBanner: false,
@@ -41,17 +43,17 @@ class MyApp extends StatelessWidget {
               ),
             ),
             home: 
-            // const ProductsOverviewScreen(),
             authManager.isAuth
-            ? const ProductsOverviewScreen()
-            : FutureBuilder(
-              future: authManager.tryAutoLogin(),
-              builder: (ctx, snapshot){
-                return snapshot.connectionState == ConnectionState.waiting
-                  ? const SplashScreen()
-                  : const AuthScreen();
-              },
-            ),
+              ? const ProductsOverviewScreen()
+              : FutureBuilder(
+                future: authManager.tryAutoLogin(),
+                builder: (ctx, snapshot){
+                  return snapshot.connectionState == ConnectionState.waiting
+                    ? const SplashScreen()
+                    : const AuthScreen();
+                },
+              ),
+            // const ProductsOverviewScreen(),
             routes: {
               CartScreen.routeName: (ctx) => const CartScreen(),
               OrdersScreen.routeName: (ctx) => const OrdersScreen(),

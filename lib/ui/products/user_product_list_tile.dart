@@ -1,5 +1,4 @@
 //Định nghĩa widget UserProductListTile hiển thị thông tin một sản phẩm cùng với các thao tác sửa/xóa
-import 'package:b1910270_ct48401_project/ui/products/products_manager.dart';
 import 'package:b1910270_ct48401_project/ui/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
